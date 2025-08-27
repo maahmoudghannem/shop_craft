@@ -7,17 +7,20 @@ class CustomContainer extends StatelessWidget {
     this.color = Colors.white,
     this.width,
     this.height,
+    this.gradient,
   });
 
   final Widget child;
   final Color color;
   final double? width, height;
+  final Gradient? gradient;
   @override
   Widget build(BuildContext context) {
     return Center(
       child: SingleChildScrollView(
         child: Container(
           decoration: BoxDecoration(
+            gradient: gradient,
             borderRadius: BorderRadius.circular(10),
             color: color,
           ),
