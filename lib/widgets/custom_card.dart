@@ -3,7 +3,16 @@ import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
 
 class CustomCard extends StatefulWidget {
-  const CustomCard({super.key});
+  const CustomCard({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.price,
+  });
+
+  final String image;
+  final String title;
+  final String price;
 
   @override
   State<CustomCard> createState() => _CustomCardState();
@@ -26,7 +35,7 @@ class _CustomCardState extends State<CustomCard> {
               child: ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
                 child: Image.asset(
-                  kImage,
+                  widget.image,
                   height: 120,
                   width: double.infinity,
                   fit: BoxFit.cover,
@@ -42,8 +51,8 @@ class _CustomCardState extends State<CustomCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(
-                        text: "New Product",
-                        fontSize: 16,
+                        text: widget.title,
+                        fontSize: 14,
                         color: Colors.black,
                         fontWeight: FontWeight.w800,
                       ),
@@ -51,8 +60,8 @@ class _CustomCardState extends State<CustomCard> {
                       CustomText(
                         text:
                             r"$"
-                            "255",
-                        fontSize: 16,
+                            "${widget.price}",
+                        fontSize: 14,
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w600,
                       ),

@@ -2,14 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
 
 class OfferItem extends StatelessWidget {
-  const OfferItem({super.key});
+  const OfferItem({
+    super.key,
+    required this.image,
+    required this.title,
+    required this.description,
+  });
+
+  final String image;
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.17,
+        height: MediaQuery.of(context).size.height * 0.15,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           color: kPrimaryColor,
@@ -31,7 +40,7 @@ class OfferItem extends StatelessWidget {
                   left: Radius.circular(16),
                 ),
                 child: Image.asset(
-                  kImage,
+                  image,
                   fit: BoxFit.cover,
                   height: double.infinity,
                 ),
@@ -47,12 +56,12 @@ class OfferItem extends StatelessWidget {
                     right: Radius.circular(16),
                   ),
                 ),
-                child: const Column(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Offer",
+                      title,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
@@ -61,7 +70,7 @@ class OfferItem extends StatelessWidget {
                     ),
                     SizedBox(height: 8),
                     Text(
-                      "Offer Descreption",
+                      description,
                       style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                   ],
