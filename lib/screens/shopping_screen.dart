@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop_craft_app/widgets/card_stack.dart';
+import 'package:shop_craft_app/widgets/image_card.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
 import 'package:shop_craft_app/widgets/gradient_background.dart';
-import 'package:shop_craft_app/widgets/image_scroll.dart';
 import 'package:shop_craft_app/widgets/offers_list.dart';
 import 'package:shop_craft_app/widgets/products_grid.dart';
 
@@ -22,8 +21,8 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
-        flexibleSpace: GradientBackGround(),
-        title: CustomText(
+        flexibleSpace: const GradientBackGround(),
+        title: const CustomText(
           text: "Our Products",
           fontSize: 30,
           fontWeight: FontWeight.w800,
@@ -34,17 +33,17 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
       body: CustomScrollView(
         slivers: [
           SliverList(
-            delegate: SliverChildListDelegate([
-              const SizedBox(height: 15),
+            delegate: SliverChildListDelegate(const [
+              SizedBox(height: 15),
               CustomText(
                 color: Colors.black,
                 text: "Featured Products",
                 fontSize: 30,
                 fontWeight: FontWeight.w900,
               ),
-              const SizedBox(height: 10),
-              ImageScroll(child: CardStack()),
-              const SizedBox(height: 20),
+              SizedBox(height: 10),
+              CardStack(),
+              SizedBox(height: 20),
               CustomText(
                 color: Colors.black,
                 text: "Shop Our Collection",
@@ -52,7 +51,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                 fontWeight: FontWeight.w900,
               ),
               ProductsGrid(),
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               CustomText(
                 color: Colors.black,
                 text: "Hot Offers",

@@ -20,7 +20,7 @@ class ShopCraft extends StatelessWidget {
         SignInScreen.id: (context) => SignInScreen(),
         ShoppingScreen.id: (context) => ShoppingScreen(),
       },
-      initialRoute: IntroScreen.id,
+      initialRoute: ShoppingScreen.id,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Suwannaphum"),
     );

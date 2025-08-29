@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
+import 'package:shop_craft_app/widgets/functions.dart';
 
 class CustomCard extends StatefulWidget {
   const CustomCard({
@@ -72,12 +73,18 @@ class _CustomCardState extends State<CustomCard> {
                     onPressed: () {
                       onPressed = !onPressed;
                       debugPrint("on pressed $onPressed");
+
                       setState(() {});
+                      onPressed
+                          ? showSnackBar(context, "Item Added to Cart")
+                          : showSnackBar(context, "Item Removed From Cart");
                     },
+
                     icon: Icon(
                       onPressed
                           ? Icons.shopping_cart_rounded
                           : Icons.shopping_cart_outlined,
+
                       size: 23,
                     ),
                   ),
