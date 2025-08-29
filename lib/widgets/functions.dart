@@ -32,18 +32,22 @@ void previousPage() {
 void showSnackBar(BuildContext context, String message) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      backgroundColor: Colors.black,
-
-      showCloseIcon: true,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       content: CustomText(
         text: message,
         fontSize: 20,
         color: Colors.white,
         fontWeight: FontWeight.w400,
       ),
+      showCloseIcon: true,
+      backgroundColor: Colors.black,
+      duration: Duration(seconds: 3),
       behavior: SnackBarBehavior.floating,
-      duration: Duration(seconds: 4),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),
   );
+}
+
+bool hiddenPassword = true;
+togglePassword() {
+  hiddenPassword = !hiddenPassword;
 }
