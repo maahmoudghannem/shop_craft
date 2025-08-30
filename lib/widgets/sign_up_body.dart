@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
+import 'package:shop_craft_app/functions/animated_navigation.dart';
+import 'package:shop_craft_app/functions/dialoge.dart';
+import 'package:shop_craft_app/functions/password_toggle.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
-import 'package:shop_craft_app/widgets/functions.dart';
 import 'package:shop_craft_app/widgets/user_input_form.dart';
 
 class SignUpBody extends StatefulWidget {
@@ -60,6 +62,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (firstChar != firstChar.toUpperCase()) {
                     return "First letter must be uppercase";
                   }
+                  return null;
                 },
                 text: "Full Name",
                 hintText: "Enter Your Full Name",
@@ -72,6 +75,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (!value.contains('@')) {
                     return "Email must contain @";
                   }
+                  return null;
                 },
 
                 text: "Email",
@@ -88,6 +92,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (value.length < 6) {
                     return "Password must be at least 6 characters";
                   }
+                  return null;
                 },
                 suffixIcon: IconButton(
                   onPressed: () {
@@ -110,6 +115,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (value != passwordController.text) {
                     return "Passwords do not match";
                   }
+                  return null;
                 },
                 suffixIcon: IconButton(
                   onPressed: () {
@@ -127,7 +133,17 @@ class _SignUpBodyState extends State<SignUpBody> {
               CustomButton(
                 onTap: () {
                   if (_formKey.currentState!.validate()) {
-                    dialoge(context, "Account Created successfully");
+                    dialoge(
+                      context,
+                      message: "Account Created successfully",
+                      onPressed: () {
+                        Navigator.pop(context);
+                        animatedNavigation(
+                          context,
+                          screen: const ShoppingScreen(),
+                        );
+                      },
+                    );
                   }
                 },
                 height: 50,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop_craft_app/functions/page_counter.dart';
 import 'package:shop_craft_app/widgets/custom_icon.dart';
 import 'package:shop_craft_app/widgets/data_lists.dart';
-import 'package:shop_craft_app/widgets/functions.dart';
 
 class CardStack extends StatefulWidget {
   const CardStack({super.key});

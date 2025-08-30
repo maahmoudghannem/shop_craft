@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
+import 'package:shop_craft_app/functions/animated_navigation.dart';
+import 'package:shop_craft_app/functions/dialoge.dart';
+import 'package:shop_craft_app/functions/password_toggle.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
-import 'package:shop_craft_app/widgets/functions.dart';
 import 'package:shop_craft_app/widgets/user_input_form.dart';
 
 class SignInBody extends StatefulWidget {
@@ -46,6 +48,7 @@ class _SignInBodyState extends State<SignInBody> {
                 if (!value.contains('@')) {
                   return "Email must contain @";
                 }
+                return null;
               },
               text: "Email",
               hintText: "Enter Your Email",
@@ -59,6 +62,7 @@ class _SignInBodyState extends State<SignInBody> {
                 if (value.length < 6) {
                   return "Password must be at least 6 characters";
                 }
+                return null;
               },
               suffixIcon: IconButton(
                 onPressed: () {
@@ -77,7 +81,17 @@ class _SignInBodyState extends State<SignInBody> {
             CustomButton(
               onTap: () {
                 if (_formKey.currentState!.validate()) {
-                  dialoge(context, "Account sign-in successfully");
+                  dialoge(
+                    context,
+                    message: "Account Sign-in successfully",
+                    onPressed: () {
+                      Navigator.pop(context);
+                      animatedNavigation(
+                        context,
+                        screen: const ShoppingScreen(),
+                      );
+                    },
+                  );
                 }
               },
               height: 50,

@@ -1,3 +1,4 @@
+// offers item list
 final List<Map<String, String>> offers = [
   {
     "image": "assets/images/pixel 9.jpg",
@@ -27,6 +28,7 @@ final List<Map<String, String>> offers = [
   },
 ];
 
+// card collection list
 final List<Map<String, String>> collection = [
   {
     "image": "assets/images/s25.webp",
@@ -46,6 +48,7 @@ final List<Map<String, String>> collection = [
   },
 ];
 
+//Page View Card images
 final List<Map<String, String>> images = [
   {
     "image": "assets/images/gadgets.jpeg",
