@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
-import 'package:shop_craft_app/widgets/functions.dart';
 
 class UserInputForm extends StatefulWidget {
   const UserInputForm({
@@ -11,6 +10,7 @@ class UserInputForm extends StatefulWidget {
     this.validator,
     this.onChanged,
     this.controller,
+    this.obscureText = false,
   });
 
   final String hintText, text;
@@ -18,6 +18,7 @@ class UserInputForm extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final void Function(String)? onChanged;
   final TextEditingController? controller;
+  final bool obscureText;
 
   @override
   State<UserInputForm> createState() => _UserInputFormState();
@@ -47,7 +48,7 @@ class _UserInputFormState extends State<UserInputForm> {
             controller: widget.controller,
             onChanged: widget.onChanged,
             validator: widget.validator,
-            obscureText: hiddenPassword,
+            obscureText: widget.obscureText,
             decoration: InputDecoration(
               suffixIcon: widget.suffixIcon,
               hintText: widget.hintText,

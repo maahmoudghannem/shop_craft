@@ -13,9 +13,14 @@ class SignUpBody extends StatefulWidget {
   State<SignUpBody> createState() => _SignUpBodyState();
 }
 
-final GlobalKey<FormState> formKey = GlobalKey();
-
+final GlobalKey<FormState> _formKey = GlobalKey();
 final passwordController = TextEditingController();
+
+// Free up memory when the widget is destroyed
+
+void controllerDispose() {
+  passwordController.dispose();
+}
 
 class _SignUpBodyState extends State<SignUpBody> {
   @override
@@ -24,7 +29,7 @@ class _SignUpBodyState extends State<SignUpBody> {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: SingleChildScrollView(
         child: Form(
-          key: formKey,
+          key: _formKey,
           child: Column(
             children: [
               const SizedBox(height: 15),
@@ -46,6 +51,11 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (value == null || value.isEmpty) {
                     return "This field is requierd";
                   }
+
+                  if (!RegExp(r"^[a-zA-Z ]+$").hasMatch(value)) {
+                    return "Only letters and spaces are allowed";
+                  }
+
                   String firstChar = value.trim()[0];
                   if (firstChar != firstChar.toUpperCase()) {
                     return "First letter must be uppercase";
@@ -69,8 +79,8 @@ class _SignUpBodyState extends State<SignUpBody> {
               ),
 
               UserInputForm(
+                obscureText: hiddenPassword,
                 controller: passwordController,
-
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "This field is requierd";
@@ -92,6 +102,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                 hintText: "Enter Your Password",
               ),
               UserInputForm(
+                obscureText: hiddenPassword,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return "This field is requierd";
@@ -100,7 +111,6 @@ class _SignUpBodyState extends State<SignUpBody> {
                     return "Passwords do not match";
                   }
                 },
-
                 suffixIcon: IconButton(
                   onPressed: () {
                     togglePassword();
@@ -116,9 +126,8 @@ class _SignUpBodyState extends State<SignUpBody> {
               const SizedBox(height: 20),
               CustomButton(
                 onTap: () {
-                  if (formKey.currentState!.validate()) {
-                    showSnackBar(context, "Account created successfully");
-                    Navigator.pushNamed(context, ShoppingScreen.id);
+                  if (_formKey.currentState!.validate()) {
+                    dialoge(context, "Account Created successfully");
                   }
                 },
                 height: 50,
