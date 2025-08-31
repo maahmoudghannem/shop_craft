@@ -1,7 +1,7 @@
 // offers item list
 
-import 'package:shop_craft_app/functions/change_language.dart';
 import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/main.dart';
 
 // localized_collections.dart
 
@@ -57,16 +57,16 @@ List<Map<String, String>> getLocalizedImages({AppLocalizations? loc}) => [
   {
     "image": "assets/images/gadgets.jpeg",
     "title": isEnglish ? loc!.perfect : loc!.collection,
-    "subtitle": loc.gadgetCollection,
+    "subTitle": loc.gadgetCollection,
   },
   {
     "image": "assets/images/laptops collection.jpg",
     "title": isEnglish ? loc.premium : loc.collection,
-    "subtitle": loc.laptopCollection,
+    "subTitle": loc.laptopCollection,
   },
   {
     "image": "assets/images/home needs.jpg",
     "title": loc.best,
-    "subtitle": loc.homeNeeds,
+    "subTitle": loc.homeNeeds,
   },
 ];

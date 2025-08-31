@@ -51,6 +51,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get enterConfirmPassword => 'أعد إدخال كلمة المرور';
 
   @override
+  String get language => 'ع';
+
+  @override
   String get welcomeBack => 'مرحبًا بعودتك';
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
+import 'package:shop_craft_app/main.dart';
 
 class OfferItem extends StatefulWidget {
   const OfferItem({
@@ -54,9 +55,13 @@ class _OfferItemState extends State<OfferItem> {
                 Expanded(
                   flex: 1,
                   child: ClipRRect(
-                    borderRadius: const BorderRadius.horizontal(
-                      left: Radius.circular(16),
-                    ),
+                    borderRadius: isEnglish
+                        ? const BorderRadius.horizontal(
+                            left: Radius.circular(16),
+                          )
+                        : const BorderRadius.horizontal(
+                            right: Radius.circular(16),
+                          ),
                     child: Image.asset(
                       widget.image,
                       fit: BoxFit.cover,
@@ -68,11 +73,15 @@ class _OfferItemState extends State<OfferItem> {
                   flex: 1,
                   child: Container(
                     padding: const EdgeInsets.all(16),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: kPrimaryColor,
-                      borderRadius: BorderRadius.horizontal(
-                        right: Radius.circular(16),
-                      ),
+                      borderRadius: isEnglish
+                          ? const BorderRadius.horizontal(
+                              right: Radius.circular(16),
+                            )
+                          : const BorderRadius.horizontal(
+                              left: Radius.circular(16),
+                            ),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

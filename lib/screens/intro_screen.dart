@@ -9,6 +9,6 @@ class IntroScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: GradientBackGround(child: IntroBody()));
+    return const Scaffold(body: GradientBackGround(child: IntroBody()));
   }
 }

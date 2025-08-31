@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
-  const CustomIcon({super.key, required this.icon, required this.onTap});
+  const CustomIcon({
+    super.key,
+    required this.icon,
+    required this.onTap,
+    this.opacity = 0.2,
+  });
 
   final IconData icon;
   final void Function() onTap;
+  final double opacity;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class CustomIcon extends StatelessWidget {
         height: 42,
         width: 28,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withOpacity(opacity),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Center(child: Icon(icon, size: 22)),

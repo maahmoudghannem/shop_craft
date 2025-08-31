@@ -77,7 +77,7 @@ class _CustomCardState extends State<CustomCard> {
                             color: Colors.black,
                             fontWeight: FontWeight.w800,
                           ),
-                          SizedBox(height: 0.1),
+                          const SizedBox(height: 0.1),
                           CustomText(
                             text:
                                 r"$"
@@ -88,23 +88,20 @@ class _CustomCardState extends State<CustomCard> {
                           ),
                         ],
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       IconButton(
                         onPressed: () {
                           onPressed = !onPressed;
                           debugPrint("on pressed $onPressed");
-
                           setState(() {});
                           onPressed
                               ? showSnackBar(context, loc.itemAdded)
                               : showSnackBar(context, loc.itemRemoved);
                         },
-
                         icon: Icon(
                           onPressed
                               ? Icons.shopping_cart_rounded
                               : Icons.shopping_cart_outlined,
-
                           size: 23,
                         ),
                       ),

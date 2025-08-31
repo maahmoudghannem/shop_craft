@@ -7,7 +7,9 @@ import 'package:shop_craft_app/l10n/app_localizations.dart';
 import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
+import 'package:shop_craft_app/widgets/custom_icon.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
+import 'package:shop_craft_app/widgets/icon_text_direction.dart';
 import 'package:shop_craft_app/widgets/user_input_form.dart';
 
 class SignInBody extends StatefulWidget {
@@ -23,13 +25,24 @@ class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
       child: Form(
         key: _formKey,
         child: Column(
           children: [
+            Row(
+              children: [
+                CustomIcon(
+                  icon: Icons.arrow_back_rounded,
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                SizedBox(width: 250),
+                isEnglish ? EngIcon(loc: loc) : ArIcon(loc: loc),
+              ],
+            ),
             const SizedBox(height: 15),
             CustomText(
               text: loc.welcomeBack,

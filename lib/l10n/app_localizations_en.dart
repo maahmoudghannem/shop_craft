@@ -51,6 +51,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get enterConfirmPassword => 'Re-enter your password';
 
   @override
+  String get language => 'EN';
+
+  @override
   String get welcomeBack => 'Welcome back';
 
   @override

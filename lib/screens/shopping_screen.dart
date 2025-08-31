@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:shop_craft_app/functions/change_language.dart';
 import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/widgets/custom_icon.dart';
-import 'package:shop_craft_app/widgets/image_card.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
 import 'package:shop_craft_app/widgets/gradient_background.dart';
-import 'package:shop_craft_app/widgets/offers_list.dart';
-import 'package:shop_craft_app/widgets/products_grid.dart';
+import 'package:shop_craft_app/widgets/shopping_body.dart';
 
 class ShoppingScreen extends StatefulWidget {
   const ShoppingScreen({super.key});
@@ -23,7 +21,18 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
     final loc = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        actions: [
+          Padding(
+            padding: isEnglish
+                ? EdgeInsets.only(right: 20)
+                : EdgeInsets.only(left: 20),
+            child: CustomIcon(
+              opacity: 0,
+              icon: Icons.language_rounded,
+              onTap: () => ShopCraft.of(context)!.changeLan(),
+            ),
+          ),
+        ],
         backgroundColor: Colors.transparent,
         flexibleSpace: const GradientBackGround(),
         title: CustomText(
@@ -33,40 +42,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
         ),
         centerTitle: true,
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverList(
-            delegate: SliverChildListDelegate([
-              CustomIcon(icon: Icons.language_rounded, onTap: changeLan),
-              SizedBox(height: 15),
-              CustomText(
-                color: Colors.black,
-                text: loc.featuredProducts,
-                fontSize: 30,
-                fontWeight: FontWeight.w900,
-              ),
-              SizedBox(height: 10),
-              CardStack(),
-              SizedBox(height: 20),
-              CustomText(
-                color: Colors.black,
-                text: loc.shopCollection,
-                fontSize: 30,
-                fontWeight: FontWeight.w900,
-              ),
-              ProductsGrid(),
-              SizedBox(height: 20),
-              CustomText(
-                color: Colors.black,
-                text: loc.hotOffers,
-                fontSize: 30,
-                fontWeight: FontWeight.w900,
-              ),
-              OffersList(),
-            ]),
-          ),
-        ],
-      ),
+      body: ShoppingScreenBody(loc: loc),
     );
   }
 }

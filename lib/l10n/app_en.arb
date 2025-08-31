@@ -16,8 +16,7 @@
   "enterPassword": "Enter your password",
   "confirmPassword": "Confirm Password",
   "enterConfirmPassword": "Re-enter your password",
-
-  
+  "language":"EN",
   "welcomeBack": "Welcome back",
   "signInToShopCraft": "Sign in to ShopCraft",
   "fieldRequired": "This field is required",

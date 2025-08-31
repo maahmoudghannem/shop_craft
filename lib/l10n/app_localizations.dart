@@ -179,6 +179,12 @@ abstract class AppLocalizations {
   /// **'Re-enter your password'**
   String get enterConfirmPassword;
 
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'EN'**
+  String get language;
+
   /// No description provided for @welcomeBack.
   ///
   /// In en, this message translates to:

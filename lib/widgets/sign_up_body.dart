@@ -4,12 +4,12 @@ import 'package:shop_craft_app/functions/animated_navigation.dart';
 import 'package:shop_craft_app/functions/dialoge.dart';
 import 'package:shop_craft_app/functions/password_toggle.dart';
 import 'package:shop_craft_app/l10n/app_localizations.dart';
-import 'package:shop_craft_app/l10n/app_localizations_ar.dart';
-import 'package:shop_craft_app/l10n/app_localizations_en.dart';
 import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
+import 'package:shop_craft_app/widgets/custom_icon.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
+import 'package:shop_craft_app/widgets/icon_text_direction.dart';
 import 'package:shop_craft_app/widgets/user_input_form.dart';
 
 class SignUpBody extends StatefulWidget {
@@ -39,6 +39,18 @@ class _SignUpBodyState extends State<SignUpBody> {
           key: _formKey,
           child: Column(
             children: [
+              Row(
+                children: [
+                  CustomIcon(
+                    icon: Icons.arrow_back_rounded,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  SizedBox(width: 250),
+                  isEnglish ? EngIcon(loc: loc) : ArIcon(loc: loc),
+                ],
+              ),
               const SizedBox(height: 15),
               CustomText(
                 text: loc.createAccount,

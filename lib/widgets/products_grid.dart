@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/l10n/app_localizations.dart';
-import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/widgets/custom_card.dart';
 import 'package:shop_craft_app/widgets/data_lists.dart';
 
@@ -10,7 +9,6 @@ class ProductsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final loc = AppLocalizations.of(context)!;
-
     final collection = getLocalizedCollection(loc);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),

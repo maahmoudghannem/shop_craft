@@ -13,7 +13,7 @@ void showSnackBar(BuildContext context, String message) {
       ),
       showCloseIcon: true,
       backgroundColor: Colors.black,
-      duration: Duration(seconds: 3),
+      duration: const Duration(seconds: 3),
       behavior: SnackBarBehavior.floating,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
     ),

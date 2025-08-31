@@ -14,7 +14,7 @@ class SignUpScreen extends StatelessWidget {
       body: GradientBackGround(
         child: CustomContainer(
           width: MediaQuery.of(context).size.width * 0.9,
-          child: SignUpBody(),
+          child: const SignUpBody(),
         ),
       ),
     );
