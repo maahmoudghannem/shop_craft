@@ -23,7 +23,7 @@ class IntroBody extends StatelessWidget {
           CustomText(text: loc.appTitle, fontSize: 65),
           const SizedBox(height: 6),
           CustomText(
-            text: loc.slang,
+            text: loc.slogan,
             fontSize: 19,
             color: Colors.white.withOpacity(0.7),
           ),

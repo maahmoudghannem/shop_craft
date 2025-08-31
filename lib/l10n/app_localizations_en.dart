@@ -12,7 +12,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'ShopCraft';
 
   @override
-  String get slang => 'Your Premium Shopping Experience';
+  String get slogan => 'Your Premium Shopping Experience';
 
   @override
   String get signUp => 'Sign Up';

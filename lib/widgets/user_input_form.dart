@@ -56,10 +56,6 @@ class _UserInputFormState extends State<UserInputForm> {
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.grey),
               ),
-              // enabledBorder: OutlineInputBorder(
-              //   borderRadius: BorderRadius.circular(10),
-              //   borderSide: BorderSide(color: Colors.grey),
-              // ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.grey),

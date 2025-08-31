@@ -101,11 +101,11 @@ abstract class AppLocalizations {
   /// **'ShopCraft'**
   String get appTitle;
 
-  /// No description provided for @slang.
+  /// No description provided for @slogan.
   ///
   /// In en, this message translates to:
   /// **'Your Premium Shopping Experience'**
-  String get slang;
+  String get slogan;
 
   /// No description provided for @signUp.
   ///

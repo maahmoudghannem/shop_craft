@@ -12,7 +12,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'متجر كرافت';
 
   @override
-  String get slang => 'تجربة تسوق ممتازة';
+  String get slogan => 'تجربة تسوق ممتازة';
 
   @override
   String get signUp => 'اشتراك';

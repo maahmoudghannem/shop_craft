@@ -1,11 +1,9 @@
 {
   "@@locale": "en",
   "appTitle": "ShopCraft",
-  "slang": "Your Premium Shopping Experience",
+  "slogan": "Your Premium Shopping Experience",
   "signUp": "Sign Up",
   "signIn": "Sign In",
-
-
   "createAccount"  : "Create Account",
   "join": "Join ShopCraft Today",
   "fullName": "Full Name",
