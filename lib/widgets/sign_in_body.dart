@@ -3,6 +3,8 @@ import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/functions/animated_navigation.dart';
 import 'package:shop_craft_app/functions/dialoge.dart';
 import 'package:shop_craft_app/functions/password_toggle.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
@@ -20,6 +22,8 @@ final GlobalKey<FormState> _formKey = GlobalKey();
 class _SignInBodyState extends State<SignInBody> {
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16),
       child: Form(
@@ -27,14 +31,14 @@ class _SignInBodyState extends State<SignInBody> {
         child: Column(
           children: [
             const SizedBox(height: 15),
-            const CustomText(
-              text: "Welcome Back",
+            CustomText(
+              text: loc.welcomeBack,
               color: kPrimaryColor,
               fontSize: 32,
             ),
             const SizedBox(height: 4),
             CustomText(
-              text: "Sign in to ShopCraft",
+              text: loc.signInToShopCraft,
               color: Colors.black.withOpacity(0.6),
               fontSize: 18,
               // fontWeight: FontWeight.w200,
@@ -43,24 +47,24 @@ class _SignInBodyState extends State<SignInBody> {
             UserInputForm(
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "This field is requierd";
+                  return loc.fieldRequired;
                 }
                 if (!value.contains('@')) {
-                  return "Email must contain @";
+                  return loc.emailMustContainAt;
                 }
                 return null;
               },
-              text: "Email",
-              hintText: "Enter Your Email",
+              text: loc.emailAddress,
+              hintText: loc.emailAddress,
             ),
             UserInputForm(
               obscureText: hiddenPassword,
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return "This field is requierd";
+                  return loc.fieldRequired;
                 }
                 if (value.length < 6) {
-                  return "Password must be at least 6 characters";
+                  return loc.passwordMinLength;
                 }
                 return null;
               },
@@ -73,8 +77,8 @@ class _SignInBodyState extends State<SignInBody> {
                     ? Icon(Icons.visibility)
                     : Icon(Icons.visibility_off),
               ),
-              text: "Password",
-              hintText: "Enter Your Password",
+              text: loc.password,
+              hintText: loc.enterPassword,
             ),
 
             const SizedBox(height: 20),
@@ -83,7 +87,7 @@ class _SignInBodyState extends State<SignInBody> {
                 if (_formKey.currentState!.validate()) {
                   dialoge(
                     context,
-                    message: "Account Sign-in successfully",
+                    message: loc.accountSignedIn,
                     onPressed: () {
                       Navigator.pop(context);
                       animatedNavigation(
@@ -97,7 +101,7 @@ class _SignInBodyState extends State<SignInBody> {
               height: 50,
               width: 310,
               radius: 10,
-              text: "Sign In",
+              text: loc.signIn,
               textColor: Colors.white,
               containerColor: kPrimaryColor,
             ),

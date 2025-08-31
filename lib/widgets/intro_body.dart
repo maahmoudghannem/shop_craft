@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/functions/animated_navigation.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/screens/sign_in_screen.dart';
 import 'package:shop_craft_app/screens/sign_up_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
@@ -12,15 +14,17 @@ class IntroBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 32),
       child: Column(
         children: [
           SizedBox(height: 100),
-          CustomText(text: "ShopCraft", fontSize: 65),
+          CustomText(text: loc.appTitle, fontSize: 65),
           SizedBox(height: 6),
           CustomText(
-            text: "Your Premium Shopping\n          Experience",
+            text: loc.slang,
             fontSize: 19,
             color: Colors.white.withOpacity(0.7),
           ),
@@ -41,7 +45,7 @@ class IntroBody extends StatelessWidget {
           CustomButton(
             height: 50,
             width: 170,
-            text: "Sign Up",
+            text: loc.signUp,
             containerColor: Colors.white,
             textColor: kPrimaryColor,
             onTap: () {
@@ -54,7 +58,7 @@ class IntroBody extends StatelessWidget {
           CustomButton(
             height: 50,
             width: 170,
-            text: "Sign In",
+            text: loc.signIn,
             containerColor: Colors.white,
             textColor: kPrimaryColor,
             onTap: () {

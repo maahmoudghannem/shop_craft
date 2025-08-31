@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_craft_app/widgets/data_lists.dart';
 
 final PageController pageController = PageController();
-
+final images = getLocalizedImages();
 int currentPage = 0;
 void nextPage() {
   if (currentPage < images.length - 1) {

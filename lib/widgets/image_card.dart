@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shop_craft_app/functions/change_language.dart';
 import 'package:shop_craft_app/functions/page_counter.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
 import 'package:shop_craft_app/widgets/custom_icon.dart';
 import 'package:shop_craft_app/widgets/data_lists.dart';
 
@@ -13,6 +15,8 @@ class CardStack extends StatefulWidget {
 class _CardStackState extends State<CardStack> {
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+    final images = getLocalizedImages(loc: loc);
     return Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -43,7 +47,8 @@ class _CardStackState extends State<CardStack> {
                         ),
                         Positioned(
                           bottom: 15,
-                          left: 12,
+                          left: isEnglish ? 12 : 0,
+                          right: isEnglish ? 0 : 12,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -86,9 +91,12 @@ class _CardStackState extends State<CardStack> {
                   top: 145,
                   left: 12,
                   child: CustomIcon(
-                    icon: Icons.arrow_back_ios_new_rounded,
+                    icon: isEnglish
+                        ? Icons.arrow_back_ios_new_rounded
+                        : Icons.arrow_forward_ios_rounded,
+
                     onTap: () {
-                      previousPage();
+                      isEnglish ? previousPage() : nextPage();
                     },
                   ),
                 ),
@@ -96,9 +104,12 @@ class _CardStackState extends State<CardStack> {
                   top: 145,
                   right: 12,
                   child: CustomIcon(
-                    icon: Icons.arrow_forward_ios_rounded,
+                    icon: isEnglish
+                        ? Icons.arrow_forward_ios_rounded
+                        : Icons.arrow_back_ios_new_rounded,
+
                     onTap: () {
-                      nextPage();
+                      isEnglish ? nextPage() : previousPage();
                     },
                   ),
                 ),

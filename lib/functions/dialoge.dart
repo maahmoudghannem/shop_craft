@@ -1,6 +1,8 @@
 //dialoge
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/main.dart';
 
 void dialoge(
   BuildContext context, {
@@ -10,6 +12,7 @@ void dialoge(
   showDialog(
     context: context,
     builder: (BuildContext context) {
+      final loc = AppLocalizations.of(context)!;
       return Dialog(
         backgroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -29,8 +32,8 @@ void dialoge(
                 const SizedBox(height: 40),
                 ElevatedButton(
                   onPressed: onPressed,
-                  child: const Text(
-                    "Close",
+                  child: Text(
+                    loc.close,
                     style: TextStyle(color: kPrimaryColor, fontSize: 17),
                   ),
                 ),

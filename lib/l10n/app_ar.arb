@@ -1,0 +1,64 @@
+{
+  "@@locale": "ar",
+  "appTitle": "متجر كرافت",
+  "slang": "تجربة تسوق ممتازة",
+  "signUp": "اشتراك",
+  "signIn": "تسجيل الدخول",
+
+
+  "createAccount"  : "إنشاء حساب",
+  "join": "انضم الى متجر كرافت",
+  "fullName": "الاسم الكامل",
+  "enterFullName": "أدخل اسمك الكامل",
+  "emailAddress": "البريد الإلكتروني",
+  "enterEmailAddress": "أدخل البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "enterPassword": "أدخل كلمة المرور",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "enterConfirmPassword": "أعد إدخال كلمة المرور",
+
+
+  "welcomeBack": "مرحبًا بعودتك",
+  "signInToShopCraft": "سجّل الدخول إلى متجر كرافت",
+  "fieldRequired": "هذا الحقل مطلوب",
+  "firstLetterUppercase": "يجب أن يكون الحرف الأول كبيرًا",
+  "onlyLettersAndSpaces": "يسمح فقط بالحروف والمسافات",
+  "emailMustContainAt": "يجب أن يحتوي البريد الإلكتروني على @",
+  "passwordMinLength": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+  "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+  "accountCreated": "تم إنشاء الحساب بنجاح",
+  "accountSignedIn": "تم تسجيل الدخول بنجاح",
+  "close": "إغلاق",
+  "ourProducts": "منتجاتنا",
+  "featuredProducts": "منتجات مميزة",
+  "shopCollection": "تسوق مجموعتنا",
+  "hotOffers": "عروض ساخنة",
+  "itemAdded": "تمت إضافة العنصر إلى السلة",
+  "itemRemoved": "تمت إزالة العنصر من السلة",
+  "premium" : "فاخرة",
+  "perfect" : "مثالية",
+  "collection" : "مجموعة",
+  "best":"أفضل",
+  "gadgetCollection": "أدوات مثالية",
+  "laptopCollection": "لابتوبات فاخرة",
+  "homeNeeds": "احتياجات المنزل",
+  "samsungTv": "تلفزيون سامسونج",
+  "samsungS25": "سامسونج S25",
+  "macbookAir": "ماك بوك إير",
+  "lgSmartWM": "غسالة LG الذكية",
+  "appleProducts": "منتجات آبل",
+  "googlePhones": "هواتف جوجل",
+  "soundcoreSpeakers": "سماعات Soundcore",
+  "smartWatches": "ساعات ذكية",
+  "logitechOffers": "عروض Logitech",
+  "freeShippingGoogle": "شحن مجاني لهواتف جوجل اليوم",
+  "discountApple": "احصل على خصم يصل إلى 20٪ على منتجات آبل",
+  "saveSamsungWatches": "وفر أكثر مع ساعات سامسونج",
+  "buy2Get30": "اشترِ 2 واحصل على خصم 30٪ على الثالث",
+  "buy1Get1": "اشترِ 1 واحصل على 1 مجانًا"
+
+
+
+
+
+}

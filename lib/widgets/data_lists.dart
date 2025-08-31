@@ -1,68 +1,72 @@
 // offers item list
-final List<Map<String, String>> offers = [
-  {
-    "image": "assets/images/pixel 9.jpg",
-    "title": "Google Phones",
-    "description": "Free Shipping for Google Phones today",
-  },
-  {
-    "image": "assets/images/mackbook pro.jpg",
-    "title": "Apple Products",
-    "description": "Get up to 20% off on Apple Products",
-  },
-  {
-    "image": "assets/images/anker-soundcore-boom-3i.webp",
-    "title": "Soundcore Speakers",
-    "description": "Buy 2 Get 30% off the Third one ",
-  },
-  {
-    "image": "assets/images/galaxy watch.jpg",
-    "title": "Smart Watches",
-    "description": "Save More with Samsung Watches",
-  },
 
-  {
-    "image": "assets/images/logitech.jpg",
-    "title": "Logitech offers",
-    "description": "Buy 1 get 1 ",
-  },
-];
+import 'package:shop_craft_app/functions/change_language.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
 
-// card collection list
-final List<Map<String, String>> collection = [
+// localized_collections.dart
+
+List<Map<String, String>> getLocalizedCollection(AppLocalizations loc) => [
   {
     "image": "assets/images/s25.webp",
-    "title": "Samsung S25",
+    "title": loc.samsungS25,
     "price": "1,049.99",
   },
   {
     "image": "assets/images/samsung-65-inch-qef1-qled-4k-smart-tv.jpg",
-    "title": "Samsung Tv",
+    "title": loc.samsungTv,
     "price": "1,399",
   },
-  {"image": "assets/images/lg.avif", "title": "LG Smart WM", "price": "2000"},
+  {"image": "assets/images/lg.avif", "title": loc.lgSmartWM, "price": "2000"},
   {
     "image": "assets/images/mackbook air.jpg",
-    "title": "MackBook Air",
+    "title": loc.macbookAir,
     "price": "789",
   },
 ];
 
-//Page View Card images
-final List<Map<String, String>> images = [
+List<Map<String, String>> getLocalizedOffers(AppLocalizations loc) => [
+  {
+    "image": "assets/images/pixel 9.jpg",
+    "title": loc.googlePhones,
+    "description": loc.freeShippingGoogle,
+  },
+  {
+    "image": "assets/images/mackbook pro.jpg",
+    "title": loc.appleProducts,
+    "description": loc.discountApple,
+  },
+  {
+    "image": "assets/images/anker-soundcore-boom-3i.webp",
+    "title": loc.soundcoreSpeakers,
+    "description": loc.buy2Get30,
+  },
+  {
+    "image": "assets/images/galaxy watch.jpg",
+    "title": loc.smartWatches,
+    "description": loc.saveSamsungWatches,
+  },
+
+  {
+    "image": "assets/images/logitech.jpg",
+    "title": loc.logitechOffers,
+    "description": loc.buy1Get1,
+  },
+];
+
+List<Map<String, String>> getLocalizedImages({AppLocalizations? loc}) => [
   {
     "image": "assets/images/gadgets.jpeg",
-    "title": "Perfect",
-    "subtitle": "Gadget Collection",
+    "title": isEnglish ? loc!.perfect : loc!.collection,
+    "subtitle": loc.gadgetCollection,
   },
   {
     "image": "assets/images/laptops collection.jpg",
-    "title": "Premium",
-    "subtitle": "Laptop Collection",
+    "title": isEnglish ? loc.premium : loc.collection,
+    "subtitle": loc.laptopCollection,
   },
   {
     "image": "assets/images/home needs.jpg",
-    "title": "Best",
-    "subtitle": "Home Needs",
+    "title": loc.best,
+    "subtitle": loc.homeNeeds,
   },
 ];

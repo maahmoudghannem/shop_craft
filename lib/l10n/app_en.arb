@@ -1,0 +1,65 @@
+{
+  "@@locale": "en",
+  "appTitle": "ShopCraft",
+  "slang": "Your Premium Shopping Experience",
+  "signUp": "Sign Up",
+  "signIn": "Sign In",
+
+
+  "createAccount"  : "Create Account",
+  "join": "Join ShopCraft Today",
+  "fullName": "Full Name",
+  "enterFullName": "Enter your full name",
+  "emailAddress": "Email Address",
+  "enterEmailAddress": "Enter your email address",
+  "password": "Password",
+  "enterPassword": "Enter your password",
+  "confirmPassword": "Confirm Password",
+  "enterConfirmPassword": "Re-enter your password",
+
+  
+  "welcomeBack": "Welcome back",
+  "signInToShopCraft": "Sign in to ShopCraft",
+  "fieldRequired": "This field is required",
+  "firstLetterUppercase": "First letter must be uppercase",
+  "onlyLettersAndSpaces": "Only letters and spaces are allowed",
+  "emailMustContainAt": "Email must contain @",
+  "passwordMinLength": "Password must be 6 characters at least",
+  "passwordsDoNotMatch": "Passwords do not match",
+  "accountCreated": "Account created successfully",
+  "accountSignedIn": "Account signed in successfully",
+  "close": "Close",
+  "ourProducts": "Our Products",
+  "featuredProducts": "Featured Products",
+  "shopCollection": "Shop Our Collection",
+  "hotOffers": "Hot Offers",
+  "itemAdded": "Item added to cart",
+  "itemRemoved": "Item removed from cart",
+  "premium" : "Premium",
+  "perfect" : "perfect",
+  "collection" : "Collection",
+  "best":"Best",
+  "gadgetCollection": "Gadget Collection",
+  "laptopCollection": "Laptop Collection",
+  "homeNeeds": "Home Needs",
+  "samsungTv": "Samsung TV",
+  "samsungS25": "Samsung S25",
+  "macbookAir": "MacBook Air",
+  "lgSmartWM": "LG Smart WM",
+  "appleProducts": "Apple Products",
+  "googlePhones": "Google Phones",
+  "soundcoreSpeakers": "Soundcore Speakers",
+  "smartWatches": "Smart Watches",
+  "logitechOffers": "Logitech Offers",
+  "freeShippingGoogle": "Free Shipping for Google Phones today",
+  "discountApple": "Get up to 20% off on Apple Products",
+  "saveSamsungWatches": "Save More with Samsung Watches",
+  "buy2Get30": "Buy 2 Get 30% off the Third one",
+  "buy1Get1": "Buy 1 Get 1"
+
+
+
+
+
+
+}

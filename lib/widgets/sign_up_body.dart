@@ -3,6 +3,10 @@ import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/functions/animated_navigation.dart';
 import 'package:shop_craft_app/functions/dialoge.dart';
 import 'package:shop_craft_app/functions/password_toggle.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
+import 'package:shop_craft_app/l10n/app_localizations_ar.dart';
+import 'package:shop_craft_app/l10n/app_localizations_en.dart';
+import 'package:shop_craft_app/main.dart';
 import 'package:shop_craft_app/screens/shopping_screen.dart';
 import 'package:shop_craft_app/widgets/custom_button.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
@@ -27,6 +31,7 @@ void controllerDispose() {
 class _SignUpBodyState extends State<SignUpBody> {
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       child: SingleChildScrollView(
@@ -35,14 +40,14 @@ class _SignUpBodyState extends State<SignUpBody> {
           child: Column(
             children: [
               const SizedBox(height: 15),
-              const CustomText(
-                text: "Create Account",
+              CustomText(
+                text: loc.createAccount,
                 color: kPrimaryColor,
                 fontSize: 32,
               ),
               const SizedBox(height: 4),
               CustomText(
-                text: "Join ShopCraft toady",
+                text: loc.join,
                 color: Colors.black.withOpacity(0.6),
                 fontSize: 18,
                 // fontWeight: FontWeight.w200,
@@ -51,35 +56,35 @@ class _SignUpBodyState extends State<SignUpBody> {
               UserInputForm(
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "This field is requierd";
+                    return loc.fieldRequired;
                   }
 
                   if (!RegExp(r"^[a-zA-Z ]+$").hasMatch(value)) {
-                    return "Only letters and spaces are allowed";
+                    return loc.onlyLettersAndSpaces;
                   }
 
                   String firstChar = value.trim()[0];
                   if (firstChar != firstChar.toUpperCase()) {
-                    return "First letter must be uppercase";
+                    return loc.firstLetterUppercase;
                   }
                   return null;
                 },
-                text: "Full Name",
-                hintText: "Enter Your Full Name",
+                text: loc.fullName,
+                hintText: loc.enterFullName,
               ),
               UserInputForm(
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "This field is requierd";
+                    return loc.fieldRequired;
                   }
                   if (!value.contains('@')) {
-                    return "Email must contain @";
+                    return loc.emailMustContainAt;
                   }
                   return null;
                 },
 
-                text: "Email",
-                hintText: "Enter Your Email",
+                text: loc.emailAddress,
+                hintText: loc.enterEmailAddress,
               ),
 
               UserInputForm(
@@ -87,10 +92,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                 controller: passwordController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "This field is requierd";
+                    return loc.fieldRequired;
                   }
                   if (value.length < 6) {
-                    return "Password must be at least 6 characters";
+                    return loc.passwordMinLength;
                   }
                   return null;
                 },
@@ -103,17 +108,17 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ? Icon(Icons.visibility)
                       : Icon(Icons.visibility_off),
                 ),
-                text: "Password",
-                hintText: "Enter Your Password",
+                text: loc.password,
+                hintText: loc.enterPassword,
               ),
               UserInputForm(
                 obscureText: hiddenPassword,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return "This field is requierd";
+                    return loc.fieldRequired;
                   }
                   if (value != passwordController.text) {
-                    return "Passwords do not match";
+                    return loc.passwordsDoNotMatch;
                   }
                   return null;
                 },
@@ -126,8 +131,8 @@ class _SignUpBodyState extends State<SignUpBody> {
                       ? Icon(Icons.visibility)
                       : Icon(Icons.visibility_off),
                 ),
-                text: "Confirm Password",
-                hintText: "Confirm Your Password",
+                text: loc.confirmPassword,
+                hintText: loc.enterConfirmPassword,
               ),
               const SizedBox(height: 20),
               CustomButton(
@@ -135,7 +140,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                   if (_formKey.currentState!.validate()) {
                     dialoge(
                       context,
-                      message: "Account Created successfully",
+                      message: loc.accountCreated,
                       onPressed: () {
                         Navigator.pop(context);
                         animatedNavigation(
@@ -149,7 +154,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                 height: 50,
                 width: 310,
                 radius: 10,
-                text: "Create Account",
+                text: loc.createAccount,
                 textColor: Colors.white,
                 containerColor: kPrimaryColor,
               ),

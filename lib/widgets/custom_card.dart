@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_craft_app/constants.dart';
 import 'package:shop_craft_app/functions/snack_bar.dart';
+import 'package:shop_craft_app/l10n/app_localizations.dart';
 import 'package:shop_craft_app/widgets/custom_text.dart';
 
 class CustomCard extends StatefulWidget {
@@ -24,6 +25,8 @@ class _CustomCardState extends State<CustomCard> {
   double _scale = 1.0;
   @override
   Widget build(BuildContext context) {
+    final loc = AppLocalizations.of(context)!;
+
     return GestureDetector(
       onTapDown: (_) => setState(() => _scale = 1.1), // Zoom in on press
       onTapUp: (_) {
@@ -93,8 +96,8 @@ class _CustomCardState extends State<CustomCard> {
 
                           setState(() {});
                           onPressed
-                              ? showSnackBar(context, "Item Added to Cart")
-                              : showSnackBar(context, "Item Removed From Cart");
+                              ? showSnackBar(context, loc.itemAdded)
+                              : showSnackBar(context, loc.itemRemoved);
                         },
 
                         icon: Icon(
