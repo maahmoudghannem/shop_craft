@@ -12,6 +12,7 @@ The app provides a seamless shopping journey — from browsing products to secur
 - [Screenshots](#screenshots)
 - [Pages](#pages)
 - [Tech Stack](#tech-stack)
+- [Setup instructions](#setup-instructions)
 
 ---
 
@@ -59,6 +60,13 @@ It’s built with a strong emphasis on _clean architecture, **package integratio
 
 ---
 
-# Clone the repository
+# Setup Instructions
 
+_Prerequisites_ :
+
+- Install [Flutter SDK](https://docs.flutter.dev/get-started/install) (latest stable version).
+- Install an IDE (Android Studio / VS Code).
+- Ensure you have a connected device or emulator set up.
+
+_Clone the repository_
 git clone https://github.com/maahmoudghannem/shop_craft
