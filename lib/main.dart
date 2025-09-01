@@ -51,7 +51,6 @@ class _ShopCraftState extends State<ShopCraft> {
       initialRoute: IntroScreen.id,
       supportedLocales: L10n.all,
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
-
       locale: appLan,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       debugShowCheckedModeBanner: false,
