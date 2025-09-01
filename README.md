@@ -9,6 +9,7 @@ The app provides a seamless shopping journey — from browsing products to secur
 
 - [About](#about)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Pages](#pages)
 - [Tech Stack](#tech-stack)
 
@@ -32,9 +33,13 @@ It’s built with a strong emphasis on _clean architecture, **package integratio
 - Animations for screen transitions & interactive buttons
 - Clean code & maintainable architecture
 - Integration of essential Flutter packages
-- lacalization supporting arabic and english languages
+- lacalization supporting arabic and english language
 
 ---
+
+# Screenshots
+
+- you can find screenshots here https://github.com/maahmoudghannem/shop_craft/tree/main/assets/screenshots
 
 ## Pages
 
@@ -48,8 +53,8 @@ It’s built with a strong emphasis on _clean architecture, **package integratio
 
 - _Framework:_ Flutter
 - _Other Tools & Packages:_
-  - flutter_localizations , intl for multiple language support
   - cached_network_image , smooth_page_indicator
+  - flutter_localizations , intl for multiple language support
   - pageview – for product carousel , gridview for product collection , listview for offers
 
 ---
